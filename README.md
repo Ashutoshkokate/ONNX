@@ -33,11 +33,10 @@ Installing ONNX is simple and can be done using popular package management tools
 
 To install ONNX via **pip**, run the following command in your terminal or command prompt:
 
-`pip install onnx`
+```pip install onnx```
 
 **Note**: Ensure your system has **CUDA** drivers installed for GPU support. For details, refer to the ONNX Runtime GPU Setup documentation.
 
----
 
 ### **2.2 Installing ONNX in a Conda Environment**
 
@@ -60,7 +59,6 @@ For ONNX Runtime:
 
 `conda install -c conda-forge onnxruntime`
 
----
 
 ### **2.3 Verifying the Installation**
 
@@ -78,7 +76,6 @@ python
 
 `import onnxruntime as ort print(ort.__version__)`
 
----
 
 ### **2.4 Troubleshooting Installation Issues**
 
@@ -176,11 +173,9 @@ If you encounter any issues during the installation, here are some common soluti
     
 3. **Clear Cache**: If the installation fails repeatedly, clear the pip cache and try again:
     
-    `pip cache purge 
+    `pip cache purge` 
     `pip install onnxruntime`
     
-
----
 
 By using the above these steps, you can successfully install **ONNX Runtime** in your development environment and ensure that your models are optimized for faster inference across different platforms.
 
@@ -210,11 +205,11 @@ PyTorch makes it easy to convert a model to the ONNX format using the `torch.onn
     
     python
     
-    `import torch 
-    `import torchvision.models as models  
-    `Load a pre-trained ResNet model 
-    `model = models.resnet18(pretrained=True) 
-    `model.eval()`
+    ```import torch 
+     import torchvision.models as models  
+     Load a pre-trained ResNet model 
+     model = models.resnet18(pretrained=True) 
+     model.eval()
     
 2. **Prepare the Dummy Input:** ONNX requires a dummy input to trace the model. This input should match the input shape expected by the model.
     
