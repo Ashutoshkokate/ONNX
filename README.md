@@ -35,14 +35,6 @@ To install ONNX via **pip**, run the following command in your terminal or comma
 
 `pip install onnx`
 
-To install **ONNX Runtime** (optimized for faster inference):
-
-`pip install onnxruntime`
-
-For GPU support: 
-
-`pip install onnxruntime-gpu`
-
 **Note**: Ensure your system has **CUDA** drivers installed for GPU support. For details, refer to the ONNX Runtime GPU Setup documentation.
 
 ---
@@ -235,10 +227,13 @@ PyTorch makes it easy to convert a model to the ONNX format using the `torch.onn
     Example:
     
     `torch.onnx.export(model, dummy_input, "resnet18.onnx", export_params=True)`
+
+   ![image](https://github.com/user-attachments/assets/b4755c48-a817-4e3e-b423-c6d9f5e55c06)
+      ![image](https://github.com/user-attachments/assets/19685e00-2d2e-43c3-a371-a37285195027)
+
+
     
 
-![[Pasted image 20250128153122.png]]
-![[Pasted image 20250128153146.png]]
 
 #### **Step Validations:**
 
@@ -267,21 +262,21 @@ For TensorFlow models, the easiest way to convert to ONNX is by using the `tf2on
 3. **Convert the Model to ONNX:** Use the `tf2onnx.convert.from_keras()` function to convert the model.
     
     Example:
-	 `# Define the input signature for the model.
-	`input_signature = [tf.TensorSpec(shape=[None, 224, 224, 3], dtype=tf.float32)]
+   ``` # Define the input signature for the model.
+	input_signature = [tf.TensorSpec(shape=[None, 224, 224, 3], dtype=tf.float32)]
 	
-	 `# Convert the model to ONNX format 
+	# Convert the model to ONNX format 
 	 
-	`onnx_model, _ = tf2onnx.convert.from_keras(model,input_signature=input_signature)
+	onnx_model, _ = tf2onnx.convert.from_keras(model,input_signature=input_signature)
 
-	 `#Save the ONNX model using onnx.save
+	 #Save the ONNX model using onnx.save
 
-	`onnx.save(onnx_model, "mobilenetv2.onnx")
-	 `print('Tensor flow model convert into the ONNX')
+	onnx.save(onnx_model, "mobilenetv2.onnx")
+	print('Tensor flow model convert into the ONNX')
 
-![[Pasted image 20250128153607.png]]
+![image](https://github.com/user-attachments/assets/08891b84-1aa7-47a3-be01-e297c49f3790)
 
-![[Pasted image 20250128153643.png]]
+![image](https://github.com/user-attachments/assets/a9a5544f-c797-411d-8bbf-8a8f467883ff)
 
 #### **Step Validations:**
 
