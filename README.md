@@ -33,7 +33,9 @@ Installing ONNX is simple and can be done using popular package management tools
 
 To install ONNX via **pip**, run the following command in your terminal or command prompt:
 
-```pip install onnx```
+```
+pip install onnx
+```
 
 **Note**: Ensure your system has **CUDA** drivers installed for GPU support. For details, refer to the ONNX Runtime GPU Setup documentation.
 
@@ -44,20 +46,28 @@ To avoid dependency issues, it’s recommended to use **Conda** for managing the
 
 1. **Create a new Conda environment**:
     
-    `conda create -n onnx_env python=3.8`
+    ```
+   conda create -n onnx_env python=3.8
+    ```
     
-2. **Activate the Conda environment**:
+3. **Activate the Conda environment**:
     
-    `conda activate onnx_env`
+    ```
+   conda activate onnx_env
+    ```
     
-3. **Install ONNX**:
+4. **Install ONNX**:
     
-    `conda install -c conda-forge onnx`
+    ```
+   conda install -c conda-forge onnx
+    ```
     
 
 For ONNX Runtime:
 
-`conda install -c conda-forge onnxruntime`
+```
+conda install -c conda-forge onnxruntime
+```
 
 
 ### **2.3 Verifying the Installation**
@@ -66,7 +76,9 @@ Once installed, verify the ONNX installation by running the following in a Pytho
 
 python
 
-`import onnx print(onnx.__version__)`
+```
+import onnx print(onnx.__version__)
+```
 
 If successful, it will print the ONNX version.
 
@@ -74,7 +86,9 @@ To verify **ONNX Runtime**, use:
 
 python
 
-`import onnxruntime as ort print(ort.__version__)`
+```
+import onnxruntime as ort print(ort.__version__)
+```
 
 
 ### **2.4 Troubleshooting Installation Issues**
@@ -83,7 +97,9 @@ If you face installation issues, try these solutions:
 
 - **Update Python and pip**:
     
-    `pip install --upgrade pip python --version`
+    ```
+  pip install --upgrade pip python --version
+    ```
     
 - **Use a Virtual Environment**: Consider using **virtualenv** or **Conda** to avoid conflicts.
 
@@ -91,7 +107,9 @@ If you face installation issues, try these solutions:
     
 - **Proxy Issues**: If behind a proxy, set the proxy settings for pip:
     
-    `pip install --proxy http://proxy.example.com:8080 onnx`
+    ```
+  pip install --proxy http://proxy.example.com:8080 onnx
+    ```
     
 
 By above these steps, you can smoothly set up ONNX for your machine learning and deep learning projects.
@@ -110,26 +128,28 @@ The most common way to install ONNX Runtime is using **pip**, the Python package
 1. **Open your terminal or command prompt**.
     
 2. **Install ONNX Runtime**: To install ONNX Runtime (CPU version):
-    
-    `pip install onnxruntime`
+    ```
+    pip install onnxruntime
+    ```
     
     This installs the CPU-optimized version, which is sufficient for most tasks, especially if you're not using GPU acceleration.
     
 3. **Install ONNX Runtime for GPU** (Optional): If you have a GPU and want to speed up inference, you can install the GPU version of ONNX Runtime. The GPU version works with **CUDA** and supports various NVIDIA GPUs for accelerated computation.
     
     To install the GPU version:
-    
-    `pip install onnxruntime-gpu`
+    ```
+    pip install onnxruntime-gpu
+    ```
     
 ##### **Verifying Installation**:
 
 Once ONNX Runtime is installed, you can verify the installation by checking the version:
-
-`import onnxruntime as ort print(ort.__version__)`
+```
+import onnxruntime as ort print(ort.__version__)
+```
 
 If successful, the version of ONNX Runtime will be printed.
 
----
 
 #### **3.2 Installing ONNX Runtime in a Conda Environment**
 
@@ -139,27 +159,37 @@ If you're using **Conda** to manage your Python environments, it's recommended t
 
 1. **Create a new Conda environment** (if you haven't already):
     
-    `conda create -n onnxruntime_env python=3.8`
+    ```
+    conda create -n onnxruntime_env python=3.8
+    ```
     
 2. **Activate the Conda environment**:
     
-    `conda activate onnxruntime_env`
+    ```
+    conda activate onnxruntime_env
+    ```
     
 3. **Install ONNX Runtime**: To install the CPU version of ONNX Runtime:
     
-    `conda install -c conda-forge onnxruntime`
+    ```
+   conda install -c conda-forge onnxruntime
+    ```
     
-    For GPU support, you can install the GPU version of ONNX Runtime by running:
-    
-    `conda install -c conda-forge onnxruntime-gpu`
-    
-4. **Verify the installation**: To verify the installation in Conda, run the same Python code to check the version:
-    
-    `import onnxruntime as ort print(ort.__version__)`
+  For GPU support, you can install the GPU version of ONNX Runtime by running:
     
 
----
+  ```
+    conda install -c conda-forge onnxruntime-gpu
+```
+      
+    
+5. **Verify the installation**: To verify the installation in Conda, run the same Python code to check the version:
+    
+    ```
+   import onnxruntime as ort print(ort.__version__)
+    ```
 
+    
 #### **3.3 Troubleshooting ONNX Runtime Installation Issues**
 
 If you encounter any issues during the installation, here are some common solutions:
@@ -168,13 +198,17 @@ If you encounter any issues during the installation, here are some common soluti
     
 2. **Upgrade pip**: Ensure you have the latest version of pip to avoid installation issues:
     
-    `pip install --upgrade pip`
+    ```
+   pip install --upgrade pip
+    ```
 
     
-3. **Clear Cache**: If the installation fails repeatedly, clear the pip cache and try again:
+4. **Clear Cache**: If the installation fails repeatedly, clear the pip cache and try again:
     
-    `pip cache purge` 
-    `pip install onnxruntime`
+   ``` sh
+    pip cache purge
+    pip install onnxruntime
+   ```
     
 
 By using the above these steps, you can successfully install **ONNX Runtime** in your development environment and ensure that your models are optimized for faster inference across different platforms.
@@ -205,26 +239,34 @@ PyTorch makes it easy to convert a model to the ONNX format using the `torch.onn
     
     python
     
-    ```import torch 
+    ```
+     import torch 
      import torchvision.models as models  
      Load a pre-trained ResNet model 
      model = models.resnet18(pretrained=True) 
      model.eval()
-    
+    ```
+
+
 2. **Prepare the Dummy Input:** ONNX requires a dummy input to trace the model. This input should match the input shape expected by the model.
     
     Example (for a model accepting a 3x224x224 input):
     
-    `dummy_input = torch.randn(1, 3, 224, 224)`
+    ```
+   dummy_input = torch.randn(1, 3, 224, 224)
+    ```
     
-3. **Convert the Model to ONNX:** Use the `torch.onnx.export()` function to convert the model.
+4. **Convert the Model to ONNX:** Use the `torch.onnx.export()` function to convert the model.
     
     Example:
     
-    `torch.onnx.export(model, dummy_input, "resnet18.onnx", export_params=True)`
+    ```
+   torch.onnx.export(model, dummy_input, "resnet18.onnx", export_params=True)
+    ```
 
-   ![image](https://github.com/user-attachments/assets/b4755c48-a817-4e3e-b423-c6d9f5e55c06)
-      ![image](https://github.com/user-attachments/assets/19685e00-2d2e-43c3-a371-a37285195027)
+
+![image](https://github.com/user-attachments/assets/b4755c48-a817-4e3e-b423-c6d9f5e55c06)
+   ![image](https://github.com/user-attachments/assets/19685e00-2d2e-43c3-a371-a37285195027)
 
 
     
@@ -245,16 +287,18 @@ For TensorFlow models, the easiest way to convert to ONNX is by using the `tf2on
 #### **Step Instructions:**
 
 1. **Install tf2onnx:** Install the `tf2onnx` package if not already installed.    
-    `pip install tf2onnx`
+    ```
+   pip install tf2onnx
+    ```
     
-2. **Load the TensorFlow Model:** You can use a pre-trained TensorFlow model or your own model.
+3. **Load the TensorFlow Model:** You can use a pre-trained TensorFlow model or your own model.
     
     Example (using a pre-trained model):
     
     `import tensorflow as tf 
     `model = tf.keras.applications.MobileNetV2(weights='imagenet')`
     
-3. **Convert the Model to ONNX:** Use the `tf2onnx.convert.from_keras()` function to convert the model.
+4. **Convert the Model to ONNX:** Use the `tf2onnx.convert.from_keras()` function to convert the model.
     
     Example:
    ``` # Define the input signature for the model.
