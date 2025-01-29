@@ -332,9 +332,9 @@ In this section, we compare the accuracy of a ResNet18 model trained using PyTor
 
 If you would like to see a visual comparison, we’ve included a screenshot showing the accuracy results of both models. 
 
-![[Pasted image 20250129120139.png]]
+![image](https://github.com/user-attachments/assets/37941075-dcb2-437f-8309-7a5862534a77)
 
-![[Pasted image 20250129120208.png]]
+![image](https://github.com/user-attachments/assets/a06fb34e-ae82-4b39-a18e-99594394439a)
 
 
 ### **ONNX Optimizer**
