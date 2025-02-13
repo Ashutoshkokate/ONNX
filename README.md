@@ -289,14 +289,15 @@ For TensorFlow models, the easiest way to convert to ONNX is by using the `tf2on
 3. **Load the TensorFlow Model:** You can use a pre-trained TensorFlow model or your own model.
     
     Example (using a pre-trained model):
-    
-    `import tensorflow as tf 
-    `model = tf.keras.applications.MobileNetV2(weights='imagenet')`
-    
+    ```
+     import tensorflow as tf 
+     model = tf.keras.applications.MobileNetV2(weights='imagenet')`
+    ```
 4. **Convert the Model to ONNX:** Use the `tf2onnx.convert.from_keras()` function to convert the model.
     
     Example:
-   ``` # Define the input signature for the model.
+   ```
+   # Define the input signature for the model.
 	input_signature = [tf.TensorSpec(shape=[None, 224, 224, 3], dtype=tf.float32)]
 	
 	# Convert the model to ONNX format 
@@ -307,7 +308,7 @@ For TensorFlow models, the easiest way to convert to ONNX is by using the `tf2on
 
 	onnx.save(onnx_model, "mobilenetv2.onnx")
 	print('Tensor flow model convert into the ONNX')
-
+   ```
 
 #### **Step Validations:**
 
@@ -384,28 +385,28 @@ The **ONNX Optimizer** is a tool designed to improve the performance of models i
 1. **Installation**
     
     First, install the ONNX Optimizer with the following command:
-    
-    `pip install onnxoptimizer`
-    
+    ```
+    pip install onnxoptimizer
+    ```
 2. **Optimizing a Model**
     
     Once installed, you can load your model and apply optimizations like this:
-    
-    `import onnx import onnxoptimizer  
-    `# Load your model 
-    `model = onnx.load('your_model.onnx') 
-    ` # Optimize the model
-     `optimized_model = onnxoptimizer.optimize(model)  
-     `# Save the optimized model 
-     `onnx.save(optimized_model, 'optimized_model.onnx')`
-    
+    ```
+	import onnx import onnxoptimizer  
+	# Load your model 
+	model = onnx.load('your_model.onnx') 
+	# Optimize the model
+	optimized_model = onnxoptimizer.optimize(model)  
+	# Save the optimized model 
+	onnx.save(optimized_model, 'optimized_model.onnx')
+    ```
 3. **Selecting Specific Optimizations**
     
     You can choose specific optimizations if you only want certain types, like removing identity operations or fusing transposes:
-    
-    `passes = ['eliminate_identity', 'fuse_consecutive_transposes'] 
-    `optimized_model = onnxoptimizer.optimize(model, passes)`
-
+    ```
+     passes = ['eliminate_identity', 'fuse_consecutive_transposes'] 
+     optimized_model = onnxoptimizer.optimize(model, passes)`
+    ```
 
 ONNX Optimizer is a valuable tool for improving the efficiency of models in the ONNX format. It helps reduce the model size, speeds up predictions, and makes sure the model works efficiently across various devices. Just be sure to test your optimized model to ensure it still performs as expected, especially in terms of accuracy.
 
