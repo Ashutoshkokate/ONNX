@@ -223,11 +223,11 @@ You can refer to the [ONNX Runtime GPU Setup Guide](https://onnxruntime.ai/docs/
     
 In summary, ONNX is the **model format**, while ONNX Runtime is the **engine that runs the model efficiently**.
 
-## **Model Conversion to .ONNX for Cross-Framework Compatibility** : 
+## 4. **Model Conversion to .ONNX for Cross-Framework Compatibility** : 
 
 After covering the introduction, key features, installation process, and troubleshooting steps, it's important to include a section on model conversion. This process typically involves using pre-trained models from deep learning and machine learning frameworks. These models are often converted into the .onnx (Open Neural Network Exchange) format, which ensures compatibility across various frameworks like TensorFlow, PyTorch, and others. Converting models to .onnx allows for easier deployment and scalability, enabling the use of the same model in different environments. Understanding this conversion process is essential for optimizing performance and leveraging the power of pre-trained models.
 
-### **3.1 Converting a PyTorch Model to ONNX**
+### **4.1 Converting a PyTorch Model to ONNX**
 
 PyTorch makes it easy to convert a model to the ONNX format using the `torch.onnx.export()` function. Here's a step-by-step guide:
 
@@ -256,7 +256,7 @@ PyTorch makes it easy to convert a model to the ONNX format using the `torch.onn
    dummy_input = torch.randn(1, 3, 224, 224)
     ```
     
-4. **Convert the Model to ONNX:** Use the `torch.onnx.export()` function to convert the model.
+3. **Convert the Model to ONNX:** Use the `torch.onnx.export()` function to convert the model.
     
     Example:
     
@@ -275,7 +275,7 @@ PyTorch makes it easy to convert a model to the ONNX format using the `torch.onn
 
 - If the model export fails, check that the input tensor shape matches the model's input requirements and ensure all model layers are compatible with ONNX.
 
-### **3.2 Converting a TensorFlow Model to ONNX**
+### **4.2 Converting a TensorFlow Model to ONNX**
 
 For TensorFlow models, the easiest way to convert to ONNX is by using the `tf2onnx` converter.
 
@@ -286,14 +286,14 @@ For TensorFlow models, the easiest way to convert to ONNX is by using the `tf2on
    pip install tf2onnx
     ```
     
-3. **Load the TensorFlow Model:** You can use a pre-trained TensorFlow model or your own model.
+2. **Load the TensorFlow Model:** You can use a pre-trained TensorFlow model or your own model.
     
     Example (using a pre-trained model):
     ```
      import tensorflow as tf 
      model = tf.keras.applications.MobileNetV2(weights='imagenet')`
     ```
-4. **Convert the Model to ONNX:** Use the `tf2onnx.convert.from_keras()` function to convert the model.
+3. **Convert the Model to ONNX:** Use the `tf2onnx.convert.from_keras()` function to convert the model.
     
     Example:
    ```
