@@ -263,8 +263,10 @@ PyTorch makes it easy to convert a model to the ONNX format using the `torch.onn
     ```
    torch.onnx.export(model, dummy_input, "resnet18.onnx", export_params=True)
     ```
+![image](https://github.com/user-attachments/assets/707ff17e-d8ae-49db-b87a-793bf995126f)
 
-    
+![image](https://github.com/user-attachments/assets/c1f8bdcd-c9b2-48f5-a3f4-9ceafdfb8a69)
+
 
 
 #### **Step Validations:**
