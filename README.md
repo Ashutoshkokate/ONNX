@@ -268,7 +268,6 @@ PyTorch makes it easy to convert a model to the ONNX format using the `torch.onn
 ![image](https://github.com/user-attachments/assets/c1f8bdcd-c9b2-48f5-a3f4-9ceafdfb8a69)
 
 
-
 #### **Step Validations:**
 
 - The model is successfully saved in the ONNX format as `resnet18.onnx`.
@@ -311,6 +310,12 @@ For TensorFlow models, the easiest way to convert to ONNX is by using the `tf2on
 	onnx.save(onnx_model, "mobilenetv2.onnx")
 	print('Tensor flow model convert into the ONNX')
    ```
+
+![image](https://github.com/user-attachments/assets/12d89c2a-2fda-4516-8ee6-3ed4e699c9ca)
+
+![image](https://github.com/user-attachments/assets/920bdf7f-d36c-48e6-973c-5611d21e0a51)
+
+
 
 #### **Step Validations:**
 
@@ -366,6 +371,13 @@ In this section, we compare the accuracy of a ResNet18 model trained using PyTor
 ### Possible Issues:
 
 - If there is a noticeable difference in accuracy, verify that the conversion from PyTorch to ONNX was done correctly and that the ONNX model is working as expected.
+
+### Visual Comparison:
+
+If you would like to see a visual comparison, we’ve included a screenshot showing the accuracy results of both models. 
+
+![image](https://github.com/user-attachments/assets/65ba8763-9bf3-4c15-9721-87c55e5168df)
+![image](https://github.com/user-attachments/assets/fcbc4c0c-4c4e-4e34-bf3b-95cfa10216ea)
 
 
 ### **ONNX Optimizer**
